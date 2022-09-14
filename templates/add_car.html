@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car App</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    {% load static %}
+</head>
+
+<body>
+    <header>
+        <div id="header-content">
+            <!-- brand -->
+            <div id="brand">
+                <h1>Add Your Car Data</h1>
+            </div>
+        </div>
+    </header>
+    <!-- form -->
+    <div id="content">
+        <div class="card border-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">Add Your Car Data</div>
+
+            <!-- <div class="card-body text-success"> -->
+            <form action="api/cars/add" method="post">
+                <!-- make -->
+                <input id="make" name="make" placeholder="&nbsp;&nbsp;&nbsp;make" type="text">
+                <!-- model -->
+                <input id="model" name="model" placeholder="&nbsp;&nbsp;&nbsp;model" type="text">
+                <!-- year -->
+                <input id="year" name="year" placeholder="&nbsp;&nbsp;&nbsp;year" type="text">
+                <!-- condition -->
+                <input id="condition" name="condition" placeholder="&nbsp;&nbsp;&nbsp;condition" type="text">
+
+                <button type="submit" class="btn btn-success">+ Car</button>
+                {% csrf_token %}
+            </form>
+            <!-- </div> -->
+        </div>
+    </div>
+
+
+    <!-- Bootstrap -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- CSS -->
+    <script src="{% static 'add_car.js' %}"></script>
+</body>
+
+</html>
